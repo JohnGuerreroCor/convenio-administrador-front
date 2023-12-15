@@ -1,0 +1,132 @@
+<div class="content">
+  <div class="card-login">
+    <div
+      class="card-header bg-usco-vt header-usco-card"
+      [ngClass]="selectedColor"
+    >
+      <div class="row text-center">
+        <div class="col">
+          <img
+            title="USCO"
+            mat-card-image
+            src="assets/facultad-salud.png"
+            class="img-fluid"
+          />
+        </div>
+      </div>
+      <hr class="punteada" />
+      <div class="row text-center">
+        <div class="col">
+          <h6 class="font-weight-bold text-white">
+            ADMINISTRADOR DE CONVENIOS
+          </h6>
+        </div>
+      </div>
+    </div>
+    <div class="card-body font-usco-gr">
+      <div class="container">
+        <form [formGroup]="formLogin">
+          <div class="row">
+            <div class="col">
+              <label class="ml-1"
+                >Usuario <span class="requerido">*</span></label
+              >
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                </div>
+                <input
+                  type="text"
+                  formControlName="usuario"
+                  class="form-control"
+                  placeholder="a1075******"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label class="ml-1"
+                >Primera contraseña <span class="requerido">*</span></label
+              >
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa-solid fa-lock"></i>
+                  </div>
+                </div>
+                <input
+                  class="form-control"
+                  formControlName="contraseniaUno"
+                  type="password"
+                  placeholder="Digite la primera contraseña"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <label class="ml-1"
+                >Segunda contraseña <span class="requerido">*</span></label
+              >
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <i class="fa-solid fa-lock"></i>
+                  </div>
+                </div>
+                <input
+                  class="form-control"
+                  formControlName="contraseniaDos"
+                  type="password"
+                  placeholder="Digite la segunda contraseña"
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="row mt-2 mb-3 text-center">
+            <div class="col">
+              <button
+                (click)="login()"
+                type="submit"
+                class="btn btn-usco-vt"
+                [disabled]="!formLogin.valid"
+              >
+                Ingresar
+                <span
+                  *ngIf="cargando"
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+              </button>
+            </div>
+          </div>
+          <div class="row mb-2 text-center">
+            <div class="col">
+              <a href="https://www.google.com.co/" target="_blank"
+                ><small class="font-usco-vt font-weight-bold"
+                  >Recuperar contraseña</small
+                ></a
+              >
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col" style="width: 100px">
+              <small style="font-size: 12px"
+                ><b class="version"
+                  >© {{ today | date : "yyyy" }} CITCD - Versión 1 Construcción
+                  1.0</b
+                ></small
+              >
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
